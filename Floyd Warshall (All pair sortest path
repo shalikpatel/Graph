@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+#include<iostream>
+using namespace std;
+int main()
+ {
+        int v, i, j, k;
+        cin >> v;
+        int arr[v][v];
+        for(i = 0; i < v; i++) {
+            for (j = 0; j < v; j++) {
+                cin >> arr[i][j];
+            }
+        }
+         
+        for(k = 0; k < v; k++) {
+            for (i = 0; i < v; i++) {
+                for(j = 0; j < v; j++) {
+                    arr[i][j] = min(arr[i][j], arr[i][k] + arr[k][j]);
+                }
+            }
+        }
+        
+        
+        for(i = 0; i < v; i++) {
+            for(j = 0; j < v; j++) {
+                cout << arr[i][j] << " ";
+            }
+            cout << endl;
+        }
+    
+    
+	return 0;
+}
